@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "corsheaders",
     "rest_framework",
+    # own app
+    "authx",
 ]
 
 REST_FRAMEWORK = {
@@ -59,9 +61,11 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "authx.middleware.SetLastUserLoggin",
 ]
 
 ROOT_URLCONF = "djangomono.urls"
+AUTH_USER_MODEL = "authx.CustomUser"
 
 TEMPLATES = [
     {
